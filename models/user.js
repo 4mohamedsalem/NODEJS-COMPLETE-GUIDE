@@ -106,7 +106,7 @@ class User {
     const db = getDb()
     return db
       .collection("orders")
-      .find({ "user._id ": new ObjectId(this._id) })
+      .find({ "user._id": new ObjectId(this._id) })
       .toArray()
   }
 
@@ -114,7 +114,7 @@ class User {
     const db = getDb()
     return db
       .collection("users")
-      .findOne({ _id: new mongodb.ObjectId(userId) })
+      .findOne({ _id: new ObjectId(userId) })
       .then((user) => {
         console.log(user)
         return user
@@ -124,4 +124,5 @@ class User {
       })
   }
 }
+
 module.exports = User
